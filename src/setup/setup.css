@@ -1,0 +1,141 @@
+/* 설정 마법사. 위젯의 M3 토큰(../renderer/styles.css)을 그대로 쓴다. */
+
+html, body { overflow: auto; }
+
+body {
+  display: block;
+  padding: 0;
+  background: var(--md-surface);
+  user-select: none;
+}
+
+.setup {
+  padding: 28px 28px 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.setup__title {
+  margin: 0 0 6px;
+  font-size: 22px; line-height: 28px; font-weight: 400;
+  letter-spacing: 0;
+}
+
+.setup__lead {
+  margin: 0 0 20px;
+  font-size: 13px; line-height: 20px;
+  color: var(--md-on-surface-variant);
+}
+
+.setup__rows { display: flex; flex-direction: column; gap: 10px; }
+.setup__loading { font-size: 13px; color: var(--md-on-surface-variant); }
+
+/* provider 한 줄 */
+.prow {
+  background: var(--md-surface-container-low);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+.prow__head { display: flex; align-items: center; gap: 10px; }
+
+.prow__check {
+  appearance: none;
+  width: 18px; height: 18px;
+  border: 2px solid var(--md-on-surface-variant);
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  position: relative;
+}
+.prow__check:checked { background: var(--md-primary); border-color: var(--md-primary); }
+.prow__check:checked::after {
+  content: '';
+  position: absolute; left: 4px; top: 0;
+  width: 5px; height: 10px;
+  border: solid var(--md-on-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.prow__name { font-size: 15px; font-weight: 500; }
+.prow__note {
+  margin: 6px 0 0 28px;
+  font-size: 12px; line-height: 18px;
+  color: var(--md-on-surface-variant);
+}
+
+.prow__status { margin-left: auto; display: flex; align-items: center; gap: 6px; }
+
+.badge {
+  font-size: 11px; line-height: 16px; font-weight: 500;
+  padding: 2px 8px; border-radius: 8px;
+  border: 1px solid var(--md-outline-variant);
+  color: var(--md-on-surface-variant);
+  white-space: nowrap;
+}
+.badge--ok   { color: var(--accent-codex); border-color: var(--accent-codex); }
+.badge--warn { color: var(--md-warn);      border-color: var(--md-warn); }
+.badge--bad  { color: var(--md-error);     border-color: var(--md-error); }
+
+.prow__buttons { margin: 10px 0 0 28px; display: flex; gap: 8px; }
+
+/* M3 버튼 */
+.btn {
+  font: inherit;
+  font-size: 13px; font-weight: 500; letter-spacing: .1px;
+  height: 36px; padding: 0 18px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color .15s ease, opacity .15s ease;
+}
+.btn:disabled { opacity: .38; cursor: default; }
+.btn--filled   { background: var(--md-primary); color: var(--md-on-primary); }
+.btn--filled:not(:disabled):hover { filter: brightness(1.08); }
+.btn--outlined { background: transparent; color: var(--md-primary); border-color: var(--md-outline-variant); }
+.btn--outlined:not(:disabled):hover { background: var(--state-layer); }
+.btn--text     { background: transparent; color: var(--md-primary); padding: 0 12px; }
+.btn--text:not(:disabled):hover { background: var(--state-layer); }
+.btn--sm { height: 30px; padding: 0 14px; font-size: 12px; border-radius: 15px; }
+
+/* 부가 옵션 한 줄 */
+.option {
+  margin-top: 16px;
+  display: flex; align-items: flex-start; gap: 10px;
+  cursor: pointer;
+}
+.option__name { display: block; font-size: 14px; }
+.option__hint {
+  display: block; margin-top: 2px;
+  font-size: 12px; line-height: 18px;
+  color: var(--md-on-surface-variant);
+}
+
+.setup__log {
+  margin: 16px 0 0;
+  max-height: 180px;
+  overflow: auto;
+  background: var(--md-surface-container);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 11px; line-height: 16px;
+  color: var(--md-on-surface-variant);
+  white-space: pre-wrap;
+  user-select: text;
+}
+
+.setup__actions {
+  margin-top: auto;
+  padding-top: 20px;
+  display: flex; align-items: center; gap: 8px;
+}
+.setup__spacer { flex: 1 1 auto; }
+
+.setup__warn {
+  margin: 10px 0 0;
+  font-size: 12px; line-height: 18px;
+  color: var(--md-warn);
+}

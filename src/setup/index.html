@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:;" />
+  <title>AI Token Widget 설정</title>
+  <link rel="stylesheet" href="../renderer/styles.css" />
+  <link rel="stylesheet" href="setup.css" />
+</head>
+<body class="theme-dark">
+  <main class="setup">
+    <h1 class="setup__title">사용할 서비스 선택</h1>
+    <p class="setup__lead">
+      위젯은 각 CLI가 저장해 둔 로그인 토큰을 읽습니다. 설치나 로그인이 안 된 항목은
+      아래에서 바로 처리할 수 있습니다.
+    </p>
+
+    <div id="rows" class="setup__rows">
+      <div class="setup__loading">검사 중…</div>
+    </div>
+
+    <pre id="log" class="setup__log" hidden></pre>
+
+    <div class="setup__actions">
+      <button class="btn btn--text" id="btnRecheck">다시 검사</button>
+      <span class="setup__spacer"></span>
+      <button class="btn btn--filled" id="btnFinish" disabled>시작하기</button>
+    </div>
+
+    <p id="npmWarn" class="setup__warn" hidden>
+      npm을 찾을 수 없습니다. 자동 설치를 쓰려면 Node.js를 먼저 설치하세요 (nodejs.org).
+    </p>
+  </main>
+  <script src="setup.js"></script>
+</body>
+</html>

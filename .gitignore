@@ -1,0 +1,15 @@
+# 의존성 / 빌드 산출물
+node_modules/
+dist/
+
+# 실행 시 생성 (설정은 %APPDATA% 에 있지만 혹시 모를 로컬 복사본까지)
+config.json
+debug-*.json
+
+# 로컬 바로가기 / 편집기 부산물
+*.lnk
+.vs/
+.idea/
+*.log
+Thumbs.db
+desktop.ini

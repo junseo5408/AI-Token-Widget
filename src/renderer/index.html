@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:;" />
+  <title>AI Token Widget</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-dark">
+  <div class="widget">
+
+    <header class="drag-handle" id="dragBar" aria-hidden="true">
+      <span class="drag-handle__grip"></span>
+    </header>
+
+    <main class="content" id="content">
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </main>
+
+    <footer class="status-bar">
+      <span id="statusText" class="status-bar__text">불러오는 중…</span>
+      <span class="status-bar__spacer"></span>
+      <div class="status-bar__tools">
+        <button class="icon-button icon-button--sm" id="btnRefresh" title="새로고침" aria-label="새로고침">
+          <svg viewBox="0 0 24 24"><path d="M12 5V2L8 6l4 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7Z"/></svg>
+        </button>
+        <button class="icon-button icon-button--sm" id="btnPin" title="항상 위" aria-label="항상 위">
+          <svg viewBox="0 0 24 24"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5c0 1.7-1.3 3-3 3v2h5.2v6l.8 1 .8-1v-6H17v-2c-1.7 0-3-1.3-3-3Z"/></svg>
+        </button>
+        <button class="icon-button icon-button--sm" id="btnTheme" title="테마 전환" aria-label="테마 전환">
+          <svg viewBox="0 0 24 24"><path d="M12 18a6 6 0 1 1 0-12v12Zm0 4a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm0-2a8 8 0 0 0 0-16v16Z"/></svg>
+        </button>
+        <select id="displaySelect" class="interval__select" title="표시 방식">
+          <option value="used">사용</option>
+          <option value="remaining">남음</option>
+        </select>
+        <select id="intervalSelect" class="interval__select" title="갱신 주기">
+          <option value="60">1분</option>
+          <option value="120">2분</option>
+          <option value="300">5분</option>
+          <option value="900">15분</option>
+        </select>
+      </div>
+    </footer>
+
+  </div>
+  <script src="../lib/format.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

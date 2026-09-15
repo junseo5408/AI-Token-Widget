@@ -1,0 +1,53 @@
+{
+  "name": "ai-token-widget",
+  "version": "1.0.0",
+  "description": "Claude / Codex 구독 플랜 사용량을 보여주는 데스크톱 위젯 (Material Design 3)",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/parsers.test.js",
+    "build": "set CSC_IDENTITY_AUTO_DISCOVERY=false&& electron-builder --win"
+  },
+  "author": "NNine",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "dev.nnine.aitokenwidget",
+    "productName": "AI Token Widget",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AI Token Widget",
+      "runAfterFinish": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "include": "build/installer.nsh",
+      "artifactName": "AI-Token-Widget-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "AI-Token-Widget-${version}-portable.${ext}"
+    }
+  }
+}
