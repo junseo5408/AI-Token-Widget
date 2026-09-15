@@ -1,7 +1,6 @@
 # AI Token Widget
 
-Claude 구독(Pro/Max)과 ChatGPT 구독(Codex)의 **남은 사용량**을 한 화면에 띄우는
-Material Design 3 데스크톱 위젯. Electron 기반, Windows 기준으로 작성됨.
+Claude 구독(Pro/Max)과 ChatGPT 구독(Codex)의 **남은 사용량**을 한 화면에 띄우는 데스크톱 위젯.
 
 ## 구조
 
